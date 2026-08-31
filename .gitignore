@@ -1,0 +1,18 @@
+# DITA-OT build output
+out/
+temp/
+.DITA-OT-*/
+
+# oXygen project/session files
+.project
+*.xpr.bak
+.oxygenState/
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# VS Code
+.vscode/
