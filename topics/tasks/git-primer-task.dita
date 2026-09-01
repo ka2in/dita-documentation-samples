@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="git_primer_task">
+    <title>Setting Up Git For Your New Project</title>
+    <shortdesc>How to complete the initial Git setup for a project.</shortdesc>
+    <taskbody>
+        <context>
+            <p>These steps cover installing Git and initializing your first repository.</p>
+        </context>
+        <steps>
+            <step>
+                <cmd>Install Git on your Linux system.</cmd>
+                <info>If you are using a Debian based distro, run the command:
+                    <codeblock>sudo apt-get update</codeblock> then:
+                    <codeblock>sudo apt install git-all</codeblock> If you are using a Red Hat
+                    based distro, use the command: <codeblock>sudo dnf update</codeblock> followed
+                    by: <codeblock>sudo dnf install git-all</codeblock>
+                </info>
+            </step>
+            <step>
+                <cmd>Configure your user name and email.</cmd>
+                <info><p>To set your username, run the command:
+                        <codeblock>git config --global user.name "Random User"</codeblock></p>
+                    <p>To set your email, run the command:
+                        <codeblock>git config --global user.email randomuser@test.com</codeblock>
+                        To check your personal settings, run the command
+                        <codeblock>git config --list</codeblock></p>
+                </info>
+            </step>
+            <step>
+                <cmd>Initialize a new repository.</cmd>
+                <info>If you already have a project, navigate to the relevant folder, then
+                    initialize an empty repository with the command:
+                    <codeblock>git init</codeblock></info>
+            </step>
+            <step>
+                <cmd>Clone an existing repository</cmd>
+                <info>To clone an existing repository, type the command:
+                    <codeblock>git clone 'URL'</codeblock></info>
+            </step>
+            <step>
+                <cmd>Add files</cmd>
+                <info>Git will not begin tracking your files unless you add them. To add all the
+                    files in your directory to Git, type the command:
+                    <codeblock>git add -A</codeblock> To add a single file called 'foo', type the
+                    command: <codeblock>git add foo</codeblock></info>
+            </step>
+            <step>
+                <cmd>Commit changes</cmd>
+                <info>To commit your changes with a message, type the command: <codeblock>git commit -m "Initial commit for Git's documentation project"</codeblock>
+                    <note>if you do not insert a commit message at the time of committing your files
+                        (i.e. if you only type `git commit`), Git will launch the default text
+                        editor set in your environment variables. </note>
+                </info>
+            </step>
+        </steps>
+        <result>
+            <p>Your project is now a Git repository, staged and ready for your first tracked commit.</p>
+        </result>
+    </taskbody>
+</task>
