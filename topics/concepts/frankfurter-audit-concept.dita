@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="git_concepts">
+    <title>Why your OpenAPI spec passes linting and still fails your developers</title>
+    <shortdesc>An audit of the Frankfurter v1 OpenAPI specification — a real, publicly available API with a technically valid spec</shortdesc>
+    <conbody>
+        <p>API documentation is only as good as it helps a developer reach their goal
+            without consulting external resources, reverse-engineering silent errors,
+            or opening a support ticket to decipher a cryptic response.</p>
+        <p>A spec that passes linting is officially done. The tooling says it's valid,
+            the CI pipeline goes green, and the documentation ships alongside the
+            release. What linting cannot measure is whether a developer facing the API
+            for the first time can actually use it.</p>
+        <section>
+            <title>What the audit found</title>
+            <dl>
+                <dlentry>
+                    <dt>
+                        Error response descriptions
+                    </dt>
+                    <dd>
+                        generic "Resource not found" vs. specific
+                        causes (invalid currency code, date before 1999-01-04, end date before
+                        start date)
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>Silent date adjustment</dt>
+                    <dd>undocumented behavior where a start date before
+                        1999-01-04 is silently adjusted, with the adjusted date reflected in the
+                        response body</dd>
+                </dlentry>
+                <dlentry>
+                    <dt>Today's rates instability</dt>
+                    <dd>no mention that today's data may update
+                        during the day as new rates are published
+                        - Working days constraint — time series endpoints silently exclude
+                        weekends and bank holidays</dd>
+                </dlentry>
+                <dlentry>
+                    <dt>Base currency default</dt>
+                    <dd>no declared default on the <parmname>base</parmname> parameter</dd>
+                </dlentry>
+                <dlentry>
+                    <dt>Response examples</dt>
+                    <dd>none present on any schema</dd>
+                </dlentry>
+                <dlentry>
+                    <dt>Required fields</dt>
+                    <dd>not declared on response schemas</dd>
+                </dlentry>
+            </dl>
+        </section>
+    </conbody>
+</concept>
