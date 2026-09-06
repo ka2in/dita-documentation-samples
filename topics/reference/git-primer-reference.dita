@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="git_primer_reference">
+    <title>Git essential commands</title>
+    <shortdesc>Common Git commands for everyday version control tasks.</shortdesc>
+    <refbody>
+        <section>
+            <simpletable>
+                <sthead>
+                    <stentry>Command</stentry>
+                    <stentry>Description</stentry>
+                </sthead>
+                <strow>
+                    <stentry><codeph>git init</codeph></stentry>
+                    <stentry>Initialize an empty repository in the current folder</stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <codeph>git clone &lt;URL&gt;</codeph>
+                    </stentry>
+                    <stentry> Clone an existing remote repository locally </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <codeph>git add -A</codeph>
+                        <lines>or</lines>
+                        <codeph>git add .</codeph>
+                    </stentry>
+                    <stentry> Stage all changed files for commit </stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git add &lt;file&gt;</codeph></stentry>
+                    <stentry>Stage a single file for commit</stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git commit -m &lt;message&gt;</codeph></stentry>
+                    <stentry>Commit staged changes with a message</stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git status</codeph></stentry>
+                    <stentry>Show the state of tracked/untracked/modified files</stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git status -s</codeph></stentry>
+                    <stentry>Short-form status output --&gt; Show the state of
+                        tracked/untracked/modified files</stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git diff</codeph></stentry>
+                    <stentry>Compare local working directory against the last commit</stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git log</codeph></stentry>
+                    <stentry>View commit history, newest first</stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git log --oneline</codeph></stentry>
+                    <stentry>Compact commit history (ID + first line of message)</stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git remote set-url origin &lt;URL&gt;</codeph></stentry>
+                    <stentry>Change the remote repository URL</stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git remote prune origin</codeph></stentry>
+                    <stentry>Remove references to deleted remote branches</stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git fetch upstream</codeph></stentry>
+                    <stentry>Fetch changes from an upstream repo without merging</stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git rebase &lt;branch&gt;</codeph></stentry>
+                    <stentry>Reapply commits on top of another base branch</stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git rebase -i HEAD~n</codeph></stentry>
+                    <stentry>Interactive rebase — squash/reword/drop recent commits</stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git cherry-pick &lt;commit&gt;</codeph></stentry>
+                    <stentry>Re-apply a specific commit onto the current branch</stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git reflog</codeph></stentry>
+                    <stentry>Show a log of where branch tips have pointed (recovery aid)</stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git reset --hard &lt;SHA&gt;</codeph></stentry>
+                    <stentry>Reset the repo to a specific previous commit</stentry>
+                </strow>
+                <strow>
+                    <stentry><codeph>git push &lt;remote&gt; &lt;branch&gt;
+                            --force-with-lease</codeph></stentry>
+                    <stentry>Force-push safely — fails if others have pushed new commits</stentry>
+                </strow>
+            </simpletable>
+            <note> Git states referenced throughout: <b>Modified</b> (working directory changes) →
+                    <b>Staged</b> (snapshotted in the staging area) → <b>Committed</b> (saved to the
+                Git directory, <codeph>.git</codeph>). </note>
+        </section>
+    </refbody>
+</reference>
