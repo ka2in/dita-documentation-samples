@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+    <title>DITA Practice — Sample Topics</title>
+    <topicref
+        href="../topics/concepts/frankfurter-audit-concept.dita"/>
+    <topicref href="../topics/tasks/git-primer-task.dita"/>
+    <topicref href="../topics/reference/git-primer-reference.dita"/>
+</map>
